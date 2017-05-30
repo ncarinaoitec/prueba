@@ -1,0 +1,50 @@
+body
+  p
+    h2
+      = @list.nombre
+    h2
+      |TAREAS
+
+      table class="table table-bordered"
+        thead
+          tr
+            th
+              | Titulo
+            th
+              | Cuerpo
+            th
+              | Fecha Vencimiento
+            th
+              | Completada
+            th
+              | Fecha Modificacion
+            th
+              | Modificar
+        - @list.tasks.each do |task|
+          tbody
+            tr
+              td
+                =task.titulo
+              td
+                =task.cuerpo
+              td
+                =task.fechavencimieto
+              td
+                - if task.completada==true
+                  | Si
+                - else
+                  | No
+              td
+                =task.fechamodificacion
+              td
+                a href="/task_editar/#{@list.id}/#{task.id}"
+                  | Editar
+                  br
+                a href="/task_borrar/#{@list.id}/#{task.id}"
+                  | Borrar
+    a href="/task_nueva/#{@list.id}"
+      | Agregar Tarea
+    br
+    a href="/lists/index"
+      | HOME
+    

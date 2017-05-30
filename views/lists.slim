@@ -1,0 +1,14 @@
+p
+  - if @lists.empty?
+    p
+      | No hay listas con tareas, crea una nuevo
+    a href="/lists/nuevo"
+      | Link
+  - else
+    - @lists.each do |list|
+      p
+        a href="/lists/ver/#{list.id}"
+          li
+            =list.nombre
+a href="/lists/nuevo"
+  | Lista Nueva

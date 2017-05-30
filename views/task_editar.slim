@@ -1,0 +1,45 @@
+form action="/task_editar/#{@list.id}" method="post"
+  label
+    | Titulo
+    input name="titulo" type="text" id='titulo' value="#{@task.titulo}"
+  br
+  br
+  label
+    | Comentario
+    input name="cuerpo" type="text" value="#{@task.cuerpo}"
+  br
+  br
+  label
+    | Fecha vencimiento
+    input name="fechavencimieto" type="date" value="#{@task.fechavencimieto}"
+  br
+  br
+  label
+    | Completada
+    - if @task.completada==true
+      input type="radio" name="completada" value="true" checked="checked"
+        | SI
+      input type="radio" name="completada" value="false"
+        | NO
+    - else
+      input type="radio" name="completada" value="true"
+        | SI
+      input type="radio" name="completada" value="false" checked="checked"
+        | NO
+  br
+  br
+  label
+    | Fecha Modificacion
+    input name="fechamodificacion" type="date" value="#{@task.fechamodificacion}"
+  br
+  br
+  input type="hidden" name='id' value="#{@task.id}"
+  input type="submit"
+
+a href="/lists/ver/#{@list.id}"
+  | Volver
+javascript:
+  $(document).ready(function () {
+    var x=document.getElementById("titulo").value;
+    console.log(x);
+  }

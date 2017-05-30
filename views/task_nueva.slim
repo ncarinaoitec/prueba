@@ -1,0 +1,23 @@
+form action="/lists/tasks/#{@list.id}/nuevo" method="post"
+  label
+    | Titulo
+    input name="titulo" type="text"
+  label
+    | Comentario
+    textarea name="cuerpo" type="text"
+  label
+    | Fecha vencimiento
+    input name="fechavencimieto" type="date"
+  label
+    | Completada
+    input type="radio" name="completada" value="true"
+      | SI
+    input type="radio" name="completada" value="false"
+      | NO
+  label
+    | Fecha Modificacion
+    input name="fechamodificacion" type="date"
+  input type="submit"
+
+a href="/lists/ver/#{@list.id}"
+  | Volver

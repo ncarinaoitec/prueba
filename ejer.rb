@@ -33,8 +33,8 @@ List.auto_upgrade!
 Task.auto_upgrade!
 
 get '/' do
-  @lists = List.all
-  slim :lists
+#çsdkjhsvckl
+#dslfkh
 end
 
 get '/lists/index' do

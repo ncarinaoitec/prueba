@@ -14,6 +14,13 @@ DataMapper::Logger.new($stdout, :debug)
 class List
   include DataMapper::Resource
   property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
   property :nombre, String
   has n, :tasks
 
@@ -34,7 +41,18 @@ Task.auto_upgrade!
 
 get '/' do
   @lists = List.all
-  slim :lists
+  slim :lists  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+
 end
 
 get '/lists/index' do
@@ -45,7 +63,17 @@ end
 get '/lists/ver/:id' do
   @list = List.get(params[:id])
   slim :list
-end
+end  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+
 
 get '/lists/nuevo' do
   slim :list_nuevo
@@ -67,7 +95,21 @@ post '/lists/tasks/:list/nuevo' do
   list = List.get(params[:list])
 
   task = Task.new(titulo: params[:titulo], cuerpo: params[:cuerpo], fechavencimieto: params[:fechavencimieto], completada: params[:completada], fechamodificacion: params[:fechamodificacion])
-  list.tasks << task
+  list.tasks << task  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+  property :id, Serial
+
   list.save
 
   redirect "/lists/ver/#{list.id}"
